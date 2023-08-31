@@ -1,0 +1,74 @@
+.App {
+  background-color: #d7d7d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.Section {
+  background-color: slategray;
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Form {
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: center;
+  min-height: 350px;
+  width: 270px;
+}
+
+.Form label,
+input {
+  width: calc(100% - 5px);
+  text-align: left;
+  margin: 3px 0;
+}
+
+.Btn {
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/*
+.List {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.List span {
+  margin: 10px 20px;
+}
+
+.Elim {
+  color: #b5b5b5;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
