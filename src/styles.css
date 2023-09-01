@@ -24,6 +24,12 @@ body {
   align-items: center;
 }
 
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  
+}
+
 .Form {
   background-color: bisque;
   display: flex;
