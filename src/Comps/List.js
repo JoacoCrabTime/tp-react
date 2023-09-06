@@ -4,23 +4,14 @@ import Card from "./Card";
 export default class List extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mat: "",
-      cod: "",
-      doce: "",
-      hs: ""
-    };
+    this.state = {};
   }
 
   render() {
-    const {materias, mat, cod, doce, hs} = this.props;
+    /*const {???} = this.props;*/
     return (
       <div className="List">
-        {materias.map((mat, index) => {
-          return(
-            <Card />
-          )
-        })}
+        <Card /> {/*temp*/}
       </div>
     );
   }

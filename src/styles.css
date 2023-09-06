@@ -42,8 +42,7 @@ body {
   width: 270px;
 }
 
-.Form label,
-input {
+.Form label, input {
   width: calc(100% - 5px);
   text-align: left;
   margin: 3px 0;
@@ -56,8 +55,7 @@ input {
   cursor: pointer;
 }
 
-/*
-.List {
+.Card {
   display: flex;
   flex-direction: column;
   margin: 5px;
@@ -67,15 +65,15 @@ input {
   background-color: white;
 }
 
-.List span {
+.Card span {
   margin: 10px 20px;
 }
 
 .Elim {
+  margin: 10px 20px;
   color: #b5b5b5;
   position: absolute;
   right: 5px;
   top: 5px;
   cursor: pointer;
 }
-*/

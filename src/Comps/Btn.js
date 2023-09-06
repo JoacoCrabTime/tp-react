@@ -7,7 +7,7 @@ export default class Btn extends React.Component {
   }
 
   render() {
-    const { title, color, onClick } = this.props;
+    const {title, color, onClick} = this.props;
     return (
       <span
         className="Btn"

@@ -7,9 +7,7 @@ import "./styles.css";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      materias: [1,2,3,4]
-    };
+    this.state = {};
   }
 
   render() {
@@ -18,7 +16,7 @@ export default class App extends React.Component {
         <Section />
         <div className="contenedor">
           <Form />
-          <List materias={this.state.materias} />
+          <List />
         </div>
         <Section />
       </div>
