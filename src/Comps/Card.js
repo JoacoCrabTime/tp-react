@@ -4,12 +4,7 @@ import Elim from "./Elim";
 export default class Card extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mat: "",
-      cod: "",
-      doce: "",
-      hs: ""
-    };
+    this.state = {};
   }
 
   render() {

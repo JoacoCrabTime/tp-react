@@ -6,10 +6,13 @@ export default class Elim extends React.Component {
     this.state = {};
   }
 
+  delCard() {
+    alert("Borrado");
+  }
+  
   render() {
-    const {}
     return (
-        <div className="Elim">X</div>
+        <div className="Elim" onClick={() => this.delCard()}>X</div>
     );
   }
 }
