@@ -7,11 +7,13 @@ import "./styles.css";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      url: "https://hd6v8q-3000.csb.app/api"
+    };
   }
-/*
+  
   getAPI() {
-    const url = "https://hd6v8q-3000.csb.app/api";
+    const {url} = this.state;
 
     axios.get(url+"/materias/")
     .then((resp) => {
@@ -23,17 +25,33 @@ export default class App extends React.Component {
         console.log(error);
     });
   }
-*/
+
+  postAPI() {
+    const {url} = this.state;
+    const body = {codigo: Form.cod, nombre: Form.mat, docente: Form.doce, hsCatedras: Form.hs};
+  
+    axios.post(url+"/materias/", body)
+    .then((resp) => {
+      console.log(resp);
+      {/*readAPI(); Actualiza cartas
+      materias.push(matsAPI); Push de API a Array (del TP4)
+      escribir(materias); Crear cartas en HTML (del TP4)
+      console.log(materias);*/}
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Section />
         <div className="contenedor">
-          <Form />
+          <Form getAPItoForm={() => this.getAPI()} postAPItoForm={() => this.postAPI()} />
           <List />
         </div>
         <Section />
-        {/*<span onClick={this.getAPI()}>*/}
       </div>
     );
   }

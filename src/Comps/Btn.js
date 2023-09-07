@@ -7,12 +7,12 @@ export default class Btn extends React.Component {
   }
 
   render() {
-    const {title, color, onClick} = this.props;
+    const {title, color, func} = this.props;
     return (
       <span
         className="Btn"
         style={{ backgroundColor: color }}
-        onClick={() => onClick()}
+        onClick={() => func()}
       >
         {title}
       </span>
