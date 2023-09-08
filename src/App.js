@@ -8,7 +8,13 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: "https://hd6v8q-3000.csb.app/api"
+      url: "https://hd6v8q-3000.csb.app/api",
+      formData: {
+        cod: "test",
+        mat: "test",
+        doce: "test",
+        hs: "test"
+      }
     };
   }
   
@@ -26,13 +32,15 @@ export default class App extends React.Component {
     });
   }
 
-  postAPI() {
+  postAPI(mat, cod, doce, hs) {
     const {url} = this.state;
-    const body = {codigo: Form.cod, nombre: Form.mat, docente: Form.doce, hsCatedras: Form.hs};
+    const body = {codigo: cod, nombre: mat, 
+      docente: doce, hsCatedras: hs};
   
     axios.post(url+"/materias/", body)
     .then((resp) => {
       console.log(resp);
+      console.log(body);
       {/*readAPI(); Actualiza cartas
       materias.push(matsAPI); Push de API a Array (del TP4)
       escribir(materias); Crear cartas en HTML (del TP4)

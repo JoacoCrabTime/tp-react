@@ -16,6 +16,7 @@ export default class Form extends React.Component {
   postCard() {
     const {mat, cod, doce, hs} = this.state;
     alert(`${mat}, ${cod}, ${doce}, ${hs}`);
+    this.props.postAPItoForm(mat, cod, doce, hs);
   }
 
   render() {
@@ -30,7 +31,6 @@ export default class Form extends React.Component {
         <Btn title="Agregar Calificación" color="#d0ac40" />
         <Btn title="Guardar" color="#99d938" func={() => this.postCard()} />
         <Btn title="getTest" func={() => this.props.getAPItoForm()} />
-        <Btn title="postTest" func={() => this.props.postAPItoForm()} />
       </div>
     );
   }
