@@ -8,10 +8,14 @@ export default class List extends React.Component {
   }
 
   render() {
-    /*const {???} = this.props;*/
+    const materia = this.props.listInfo;
     return (
       <div className="List">
-        <Card /> {/*temp*/}
+        {materia.map((mat, index) => {
+	        return(
+		        <Card key={index} cardInfo={mat} />
+	        )
+        })}
       </div>
     );
   }

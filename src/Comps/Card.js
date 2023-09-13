@@ -8,12 +8,12 @@ export default class Card extends React.Component {
   }
 
   render() {
-    const {mat, cod, doce, hs} = this.props;
+    const {nombre, codigo, docente, hsCatedras} = this.props.cardInfo;
     return(
       <div className="Card">
 		    <Elim />
-        <span>{cod}, {mat}</span>
-			  <span>{doce}: {hs} Horas Semanales</span>
+        <span>{codigo}, {nombre}</span>
+			  <span>{docente}: {hsCatedras} Horas Semanales</span>
 	    </div>
     );
   }

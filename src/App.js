@@ -3,22 +3,21 @@ import Form from "./Comps/Form";
 import Section from "./Comps/Section";
 import List from "./Comps/List";
 import "./styles.css";
+const url= "https://hd6v8q-3000.csb.app/api";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: "https://hd6v8q-3000.csb.app/api",
-      body: ""
+      mats: []
     };
   }
   
   getAPI() {
-    const {url} = this.state;
-
     axios.get(url+"/materias/")
     .then((resp) => {
         console.log("Consulta realizada");
+        this.setState({mats: resp.data.materias});
         console.log(resp.data);
     })
     .catch((error) => {
@@ -27,17 +26,13 @@ export default class App extends React.Component {
     });
   }
 
-  postAPI() {
-    const {url, body} = this.state;
-
-    axios.post(url+"/materias/", body)
+  postAPI(data) {
+    axios.post(url+"/materias/", data)
     .then((resp) => {
       console.log(resp);
-      console.log(body);
-      {/*readAPI(); Actualiza cartas
-      materias.push(matsAPI); Push de API a Array (del TP4)
-      escribir(materias); Crear cartas en HTML (del TP4)
-      console.log(materias);*/}
+      console.log(data);
+      this.getAPI();
+      {/*escribir(materias); Creaba cartas en HTML (del TP4)*/}
     })
     .catch((error) => {
       console.log(error);
@@ -45,12 +40,13 @@ export default class App extends React.Component {
   }
 
   render() {
+    const {mats} = this.state;
     return (
       <div className="App">
         <Section />
         <div className="contenedor">
-          <Form getAPItoForm={() => this.getAPI()} postAPItoForm={() => this.postAPI()}/>
-          <List />
+          <Form getAPItoForm={() => this.getAPI()} postAPItoForm={(data) => this.postAPI(data)} />
+          <List listInfo={mats} />
         </div>
         <Section />
       </div>
