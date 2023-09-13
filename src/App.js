@@ -9,12 +9,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       url: "https://hd6v8q-3000.csb.app/api",
-      formData: {
-        cod: "test",
-        mat: "test",
-        doce: "test",
-        hs: "test"
-      }
+      body: ""
     };
   }
   
@@ -32,11 +27,9 @@ export default class App extends React.Component {
     });
   }
 
-  postAPI(mat, cod, doce, hs) {
-    const {url} = this.state;
-    const body = {codigo: cod, nombre: mat, 
-      docente: doce, hsCatedras: hs};
-  
+  postAPI() {
+    const {url, body} = this.state;
+
     axios.post(url+"/materias/", body)
     .then((resp) => {
       console.log(resp);
@@ -56,7 +49,7 @@ export default class App extends React.Component {
       <div className="App">
         <Section />
         <div className="contenedor">
-          <Form getAPItoForm={() => this.getAPI()} postAPItoForm={() => this.postAPI()} />
+          <Form getAPItoForm={() => this.getAPI()} postAPItoForm={() => this.postAPI()}/>
           <List />
         </div>
         <Section />

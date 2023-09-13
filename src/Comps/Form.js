@@ -16,7 +16,9 @@ export default class Form extends React.Component {
   postCard() {
     const {mat, cod, doce, hs} = this.state;
     alert(`${mat}, ${cod}, ${doce}, ${hs}`);
-    this.props.postAPItoForm(mat, cod, doce, hs);
+    const data = {codigo: cod, nombre: mat, 
+    docente: doce, hsCatedras: hs};
+    this.props.postAPItoForm(data);
   }
 
   render() {
