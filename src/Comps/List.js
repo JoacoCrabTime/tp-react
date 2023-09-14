@@ -13,7 +13,7 @@ export default class List extends React.Component {
       <div className="List">
         {materia.map((mat, index) => {
 	        return(
-		        <Card key={index} cardInfo={mat} />
+		        <Card key={index} cardInfo={mat} deleteAPItoCard={(index) => this.props.deleteAPItoList(index)} />
 	        )
         })}
       </div>

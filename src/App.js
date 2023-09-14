@@ -12,7 +12,7 @@ export default class App extends React.Component {
       mats: []
     };
   }
-  
+
   getAPI() {
     axios.get(url+"/materias/")
     .then((resp) => {
@@ -32,11 +32,26 @@ export default class App extends React.Component {
       console.log(resp);
       console.log(data);
       this.getAPI();
-      {/*escribir(materias); Creaba cartas en HTML (del TP4)*/}
     })
     .catch((error) => {
       console.log(error);
     })
+  }
+
+  deleteAPI(index) {
+    axios.delete(url+"/materias/"+index)
+	  .then((resp) => {
+		  console.log(resp);
+		  console.log(index);
+      this.getAPI();
+	  })
+	  .catch((error) => {
+		  console.log(error);
+    })
+  }
+
+  componentDidMount() {
+    this.getAPI();
   }
 
   render() {
@@ -46,7 +61,7 @@ export default class App extends React.Component {
         <Section />
         <div className="contenedor">
           <Form getAPItoForm={() => this.getAPI()} postAPItoForm={(data) => this.postAPI(data)} />
-          <List listInfo={mats} />
+          <List listInfo={mats} deleteAPItoList={(index) => this.deleteAPI(index)} />
         </div>
         <Section />
       </div>
